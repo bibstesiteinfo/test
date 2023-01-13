@@ -1,14 +1,20 @@
 ---
-# WEB SERVER
 - hosts: serverweb
-  become: true
-
+- name: Setting up LAMP Website
+  user: root
+  hosts: serverweb
+  become: yes
   tasks:
-  - name: install apache and php last version
-    apt:
-      name:
-        - apache2
-        - php
-        - php-mysql
-      state: present
-      ...
+    - name: latest version of all required packages installed
+      apt:
+        name:
+          - mariadb-server
+          - php
+          - php-mysql
+        state: latest
+
+    - name: mariadb enabled and running
+      service:
+        name: mariadb
+        enabled: true
+        state: started
