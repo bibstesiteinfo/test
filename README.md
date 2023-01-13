@@ -1,7 +1,5 @@
-# test
 ---
 # WEB SERVER
-
 - hosts: serverweb
   become: true
 
