@@ -1,20 +1,8 @@
 ---
-- hosts: serverweb
-- name: Setting up LAMP Website
-  user: root
+- name: install serv web
   hosts: serverweb
-  become: yes
+  remote_user: root
   tasks:
-    - name: latest version of all required packages installed
-      apt:
-        name:
-          - mariadb-server
-          - php
-          - php-mysql
-        state: latest
-
-    - name: mariadb enabled and running
-      service:
-        name: mariadb
-        enabled: true
-        state: started
+   - name: install apache2
+     apt: name=apache2
+...
