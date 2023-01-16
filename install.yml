@@ -1,6 +1,7 @@
 ---
 - name: install serv web
   hosts: serverweb
+  become: true
   remote_user: root
   tasks:
    - name: install apache2
