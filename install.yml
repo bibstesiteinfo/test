@@ -1,6 +1,6 @@
 ---
 - name: install serv web
-  hosts: serverweb
+  hosts: 172.16.14.202
   become: true
   remote_user: root
   tasks:
